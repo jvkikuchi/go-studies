@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 )
 
 var languages = map[string]string{
@@ -10,24 +10,25 @@ var languages = map[string]string{
 	"ES": "Hola, ",
 }
 
-func Hello(name string, language string) string {
+func getGreeting(language string) string {
 	greeting, ok := languages[language]
 
-	if (name != "" && ok) {
-		return greeting + name
+	if (ok) {
+		return greeting
 	}
 
-	if (name == "" && ok) {
+	return "Hello, "
+}
+
+func Hello(name string, language string) string {
+	greeting := getGreeting(language)
+
+	if (name == "") {
 		return greeting + "World"
 	}
 
-	if (name == "" && !ok) {
-		return "Hello, World"
-	}
-
-	return "Hello, " + name
+	return greeting + name
 }
 
 func main() {
-	fmt.Println(Hello("Joao", "123"))
 }
