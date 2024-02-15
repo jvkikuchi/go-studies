@@ -1,7 +1,7 @@
 package main
 
 import (
-	// "fmt"
+// "fmt"
 )
 
 var languages = map[string]string{
@@ -13,7 +13,7 @@ var languages = map[string]string{
 func getGreeting(language string) string {
 	greeting, ok := languages[language]
 
-	if (ok) {
+	if ok {
 		return greeting
 	}
 
@@ -23,7 +23,7 @@ func getGreeting(language string) string {
 func Hello(name string, language string) string {
 	greeting := getGreeting(language)
 
-	if (name == "") {
+	if name == "" {
 		return greeting + "World"
 	}
 
